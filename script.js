@@ -1,5 +1,14 @@
 function toggleDarkMode() {
-    document.body.classList.toggle('dark-mode');
+    const body = document.body;
+    body.classList.toggle('dark-mode');
+    body.classList.toggle('light-mode');
+
+    const toggleButton = document.getElementById('toggle-dark-mode');
+    if (body.classList.contains('dark-mode')) {
+        toggleButton.innerText = 'Modo Claro';
+    } else {
+        toggleButton.innerText = 'Modo Oscuro';
+    }
 }
 
 function calcularApalancamiento() {
@@ -31,3 +40,6 @@ function calcularApalancamiento() {
     const apalancamiento = (capital * riesgo) / diferenciaPrecios / volumenContrato;
     document.getElementById("resultado").innerText = "Apalancamiento de entrada al mercado: " + apalancamiento.toFixed(2);
 }
+
+// Inicialización del modo claro
+document.body.classList.add('light-mode');
