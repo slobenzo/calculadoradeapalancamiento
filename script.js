@@ -13,14 +13,20 @@ function toggleDarkMode() {
 
 function calcularApalancamiento() {
     const capital = parseFloat(document.getElementById("capital").value);
-    const riesgo = parseFloat(document.getElementById("riesgo").value) / 100;
+    let riesgo = parseFloat(document.getElementById("riesgo").value);
     const diferenciaPrecios = parseFloat(document.getElementById("diferenciaPrecios").value);
     const volumenContrato = parseFloat(document.getElementById("volumenContrato").value);
     
     const riesgoEquivalenteElement = document.getElementById("riesgo-equivalente");
 
+    if (!isNaN(riesgo)) {
+        if (riesgo < 0) riesgo = 0;
+        if (riesgo > 100) riesgo = 100;
+        document.getElementById("riesgo").value = riesgo;
+    }
+
     if (!isNaN(capital) && !isNaN(riesgo) && capital > 0 && riesgo > 0) {
-        let riesgoEquivalente = capital * riesgo;
+        let riesgoEquivalente = capital * (riesgo / 100);
         if (riesgoEquivalente % 1 === 0) {
             riesgoEquivalente = riesgoEquivalente.toFixed(0);
         } else {
@@ -37,7 +43,7 @@ function calcularApalancamiento() {
         return;
     }
 
-    const apalancamiento = (capital * riesgo) / diferenciaPrecios / volumenContrato;
+    const apalancamiento = (capital * (riesgo / 100)) / diferenciaPrecios / volumenContrato;
     document.getElementById("resultado").innerText = "Apalancamiento de entrada al mercado: " + apalancamiento.toFixed(2);
 }
 
