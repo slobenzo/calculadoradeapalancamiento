@@ -1,0 +1,112 @@
+/* Colores basados en el diseño de Apple */
+:root {
+    --apple-light-background: #ffffff;
+    --apple-light-text: #000000;
+    --apple-light-button: #007aff;
+    --apple-light-button-hover: #005bb5;
+
+    --apple-dark-background: #1c1c1e;
+    --apple-dark-text: #ffffff;
+    --apple-dark-button: #0a84ff;
+    --apple-dark-button-hover: #0060df;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--apple-light-background);
+    color: var(--apple-light-text);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    flex-direction: column;
+}
+
+.dark-mode-toggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--apple-light-background);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--apple-light-button);
+    color: var(--apple-light-text);
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: var(--apple-light-button-hover);
+}
+
+#riesgo-equivalente {
+    margin-top: 10px;
+    margin-bottom: 20px; /* Espacio adicional */
+    font-weight: bold;
+}
+
+#resultado {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.oculto {
+    display: none;
+}
+
+.dark-mode {
+    background-color: var(--apple-dark-background);
+    color: var(--apple-dark-text);
+}
+
+.dark-mode .container {
+    background-color: var(--apple-dark-background);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode input[type="number"] {
+    background-color: #555;
+    color: #fff;
+    border: 1px solid #777;
+}
+
+.dark-mode button {
+    background-color: var(--apple-dark-button);
+}
+
+.dark-mode button:hover {
+    background-color: var(--apple-dark-button-hover);
+}
