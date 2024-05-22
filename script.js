@@ -44,7 +44,7 @@ function calcularApalancamiento() {
     }
 
     const apalancamiento = (capital * (riesgo / 100)) / diferenciaPrecios / volumenContrato;
-    document.getElementById("resultado").innerText = "Apalancamiento de entrada al mercado: " + apalancamiento.toFixed(2);
+    document.getElementById("resultado").innerText = "Lotaje de entrada al mercado: " + apalancamiento.toFixed(2);
 }
 
 function reiniciarFormulario() {
