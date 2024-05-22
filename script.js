@@ -47,5 +47,22 @@ function calcularApalancamiento() {
     document.getElementById("resultado").innerText = "Apalancamiento de entrada al mercado: " + apalancamiento.toFixed(2);
 }
 
+function reiniciarFormulario() {
+    document.getElementById("capital").value = '';
+    document.getElementById("riesgo").value = '';
+    document.getElementById("diferenciaPrecios").value = '';
+    document.getElementById("volumenContrato").value = '';
+    document.getElementById("resultado").innerText = '';
+    document.getElementById("riesgo-equivalente").classList.add("oculto");
+}
+
+function mostrarTooltip(id) {
+    document.getElementById(id).style.display = 'block';
+}
+
+function ocultarTooltip(id) {
+    document.getElementById(id).style.display = 'none';
+}
+
 // Inicialización del modo claro
 document.body.classList.add('light-mode');

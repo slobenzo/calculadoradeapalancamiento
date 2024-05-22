@@ -40,6 +40,7 @@ body {
 
 .input-group {
     margin-bottom: 15px;
+    position: relative;
 }
 
 label {
@@ -87,6 +88,38 @@ button:hover {
     display: none;
 }
 
+.tooltip-container {
+    position: relative;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    padding: 10px;
+    background-color: rgba(51, 51, 51, 0.9);
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 12px;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(51, 51, 51, 0.9) transparent transparent transparent;
+}
+
 .dark-mode {
     background-color: var(--apple-dark-background);
     color: var(--apple-dark-text);
@@ -109,6 +142,15 @@ button:hover {
 
 .dark-mode button:hover {
     background-color: var(--apple-dark-button-hover);
+}
+
+.dark-mode .tooltip {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #000;
+}
+
+.dark-mode .tooltip::after {
+    border-color: rgba(255, 255, 255, 0.9) transparent transparent transparent;
 }
 
 .dark-mode .dark-mode-toggle button {
