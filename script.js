@@ -13,7 +13,8 @@ function toggleDarkMode() {
 
 function calcularApalancamiento() {
     const capital = parseFloat(document.getElementById("capital").value);
-    let riesgo = parseFloat(document.getElementById("riesgo").value);
+    const riesgoInput = document.getElementById("riesgo");
+    let riesgo = parseFloat(riesgoInput.value);
     const diferenciaPrecios = parseFloat(document.getElementById("diferenciaPrecios").value);
     const volumenContrato = parseFloat(document.getElementById("volumenContrato").value);
     
@@ -22,7 +23,7 @@ function calcularApalancamiento() {
     if (!isNaN(riesgo)) {
         if (riesgo < 0) riesgo = 0;
         if (riesgo > 100) riesgo = 100;
-        document.getElementById("riesgo").value = riesgo;
+        riesgoInput.value = riesgo;
     }
 
     if (!isNaN(capital) && !isNaN(riesgo) && capital > 0 && riesgo > 0) {
