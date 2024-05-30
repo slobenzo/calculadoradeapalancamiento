@@ -14,17 +14,20 @@ function toggleDarkMode() {
 function calcularApalancamiento() {
     const capital = parseFloat(document.getElementById("capital").value);
     const riesgoInput = document.getElementById("riesgo");
-    let riesgo = parseFloat(riesgoInput.value);
-    const diferenciaPrecios = parseFloat(document.getElementById("diferenciaPrecios").value);
-    const volumenContrato = parseFloat(document.getElementById("volumenContrato").value);
-    
-    const riesgoEquivalenteElement = document.getElementById("riesgo-equivalente");
+    const riesgoOriginal = parseFloat(riesgoInput.value);
+    let riesgo = riesgoOriginal;
 
     if (!isNaN(riesgo)) {
         if (riesgo < 0) riesgo = 0;
         if (riesgo > 100) riesgo = 100;
-        riesgoInput.value = riesgo;
+        if (riesgo !== riesgoOriginal) {
+            riesgoInput.value = riesgo;
+        }
     }
+
+    const diferenciaPrecios = parseFloat(document.getElementById("diferenciaPrecios").value);
+    const volumenContrato = parseFloat(document.getElementById("volumenContrato").value);
+    const riesgoEquivalenteElement = document.getElementById("riesgo-equivalente");
 
     if (!isNaN(capital) && !isNaN(riesgo) && capital > 0 && riesgo > 0) {
         let riesgoEquivalente = capital * (riesgo / 100);
