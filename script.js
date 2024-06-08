@@ -1,16 +1,3 @@
-function toggleDarkMode() {
-    const body = document.body;
-    body.classList.toggle('dark-mode');
-    body.classList.toggle('light-mode');
-
-    const toggleButton = document.getElementById('toggle-dark-mode');
-    if (body.classList.contains('dark-mode')) {
-        toggleButton.innerText = 'Modo Claro';
-    } else {
-        toggleButton.innerText = 'Modo Oscuro';
-    }
-}
-
 function calcularApalancamiento() {
     const capital = parseFloat(document.getElementById("capital").value);
     const riesgoInput = document.getElementById("riesgo");
@@ -67,6 +54,3 @@ function mostrarTooltip(id) {
 function ocultarTooltip(id) {
     document.getElementById(id).style.display = 'none';
 }
-
-// Inicialización del modo claro
-document.body.classList.add('light-mode');
